@@ -39,6 +39,7 @@ function playSong(song) {
             currentSong.sound.stop();
         }
         currentSong = {
+            anime: song.anime,
             songname: song.song,
             artist: song.artist,
             sound: sound,
@@ -59,7 +60,7 @@ function handleInput(e) {
             guess = e.target.value;
             debug(`guess: ${guess}`);
 
-            debug(`answer:${currentSong.songname} by ${currentSong.artist}`);
+            debug(`answer:${currentSong.songname} by ${currentSong.artist} (${currentSong.anime})`);
 
             playNextSong();
         }
